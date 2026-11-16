@@ -1260,9 +1260,9 @@ function rollDice(){
 async function drawPick(){
   if (D_.rolling) return; D_.rolling = true;
   const b = $('#d-go'); b.classList.remove('spin'); void b.offsetWidth; b.classList.add('spin');
-  const roll = rollDice();
-  if (typeof load === 'function') { try { await load(); } catch (e) {} }
-  await roll; D_.rolling = false;
+  // usa os retornos já carregados (atualizados a cada minuto) e atualiza em segundo plano, sem esperar a planilha
+  if (typeof load === 'function') { try { Promise.resolve(load()).catch(() => {}); } catch (e) {} }
+  await rollDice(); D_.rolling = false;
   let pool = drawPool();
   const fresh = pool.filter(t => !D_.skip.has(t.id) && t.id !== D_.cur);
   if (fresh.length) pool = fresh; else if (pool.length) D_.skip.clear();
