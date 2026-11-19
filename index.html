@@ -627,13 +627,13 @@ input[type=search],select,textarea{border-radius:10px}
 <div id="v-guia" data-pane="guia" hidden>
   <p class="eyebrow">Para todos · comece por aqui</p>
   <h1>Como vamos construir o vocabulário juntos</h1>
-  <p class="lead">Um vocabulário controlado faz a mesma coisa ter o mesmo nome em todo lugar: nos cadastros, nos sistemas, nos indicadores e nos relatórios do Itaú Social, do Itaú Cultural, do Itaú Educação e Trabalho e do Observatório. A sistematização fez uma primeira proposta, e agora convidamos as frentes, por meio dos pontos focais, a olhar para ela com a gente até a <b>primeira semana de dezembro</b>. Juntos, chegamos à versão 1.0 em 18 de dezembro.</p>
+  <p class="lead">Um vocabulário controlado faz a mesma coisa ter o mesmo nome em todo lugar: nos cadastros, nos sistemas, nos indicadores e nos relatórios do Itaú Social, do Itaú Cultural, do Itaú Educação e Trabalho e do Observatório. A sistematização fez uma primeira proposta, e agora convidamos as pessoas das frentes a olhar para ela com a gente até a <b>primeira semana de dezembro</b>. Juntos, chegamos à versão 1.0 em 18 de dezembro.</p>
 
   <section class="block">
     <h2>As etapas</h2>
     <div class="process">
       <div class="step done"><span class="when">Outubro a novembro · semana 2 · concluída</span><h3>Sistematização</h3><p>Reunimos os termos das frentes, revisamos definições e remissivos, juntamos o que se repetia e organizamos tipos de uso e categorias.</p></div>
-      <div class="step now"><span class="when">Novembro a dezembro · semana 1 · agora</span><h3>Avaliação pelas frentes</h3><p>Os pontos focais das frentes olham os termos e contam se concordam ou o que mudariam. Cada termo recebe pelo menos duas avaliações.</p></div>
+      <div class="step now"><span class="when">Novembro a dezembro · semana 1 · agora</span><h3>Avaliação pelas frentes</h3><p>Quem é das frentes olha os termos e conta se concorda ou o que mudaria. Cada termo recebe pelo menos duas avaliações.</p></div>
       <div class="step"><span class="when">Dezembro · semana 2</span><h3>Análise das sugestões e consolidação dos resultados</h3><p>A sistematização lê cada sugestão e cada discordância, incorpora os ajustes e consolida a versão final.</p></div>
       <div class="step end"><span class="when">18/12</span><h3>Entrega da versão 1.0</h3><p>O vocabulário passa a ser a referência comum da Fundação para sistemas, formulários e relatórios.</p></div>
     </div>
@@ -643,7 +643,7 @@ input[type=search],select,textarea{border-radius:10px}
     <div>
       <h2>Quem faz o quê</h2>
       <div class="roles">
-        <div><h3>Frentes, por meio dos pontos focais</h3><p>Avaliam os termos em <a href="#termos">Revisar termos</a>, de preferência pelo sorteio. Não há divisão por frente: qualquer ponto focal pode avaliar qualquer termo, e o olhar de outras áreas também enriquece a proposta.</p></div>
+        <div><h3>Frentes</h3><p>Qualquer pessoa das frentes pode avaliar os termos em <a href="#termos">Revisar termos</a>, de preferência pelo sorteio. Não há divisão por área: cada pessoa pode avaliar qualquer termo, e o olhar de outras áreas também enriquece a proposta.</p></div>
         <div><h3>Sistematização</h3><p>Acompanha as avaliações, analisa as sugestões, consolida a planilha e prepara o guia de uso.</p></div>
         <div><h3>Lideranças</h3><p>Acompanham o andamento na <a href="#visao">Visão geral</a> e no <a href="#painel">Acompanhamento</a>, e recebem a versão 1.0 em 18/12.</p></div>
       </div>
@@ -737,7 +737,7 @@ input[type=search],select,textarea{border-radius:10px}
   </section>
 
   <section class="block">
-    <h2>Pontos focais</h2>
+    <h2>Quem participou</h2>
     <div id="p-people" class="people"></div>
   </section>
 
@@ -1204,10 +1204,10 @@ function avatar(uid, n){
   const hue = h % 360; const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><rect width='48' height='48' rx='24' fill='hsl(${hue},45%,42%)'/><text x='24' y='30' font-family='Arial' font-size='18' font-weight='700' fill='white' text-anchor='middle'>${initials(n).replace(/[<&>']/g, '')}</text></svg>`;
   return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 }
-function nameOf(uid){ return (uid === myId && myName) || (all[uid] && all[uid].nome) || 'Ponto focal'; }
+function nameOf(uid){ return (uid === myId && myName) || (all[uid] && all[uid].nome) || 'Pessoa'; }
 function paintNames(){
   document.querySelectorAll('[data-uid]').forEach(n => { const uid = n.dataset.uid; const nm = nameOf(uid);
-    if (n.tagName === 'IMG') n.src = avatar(uid, nm); else n.textContent = nm || 'Ponto focal'; });
+    if (n.tagName === 'IMG') n.src = avatar(uid, nm); else n.textContent = nm || 'Pessoa'; });
 }
 function renderList(){
   if (D_.mode === 'sorteio') { drawStatus(true); return; }
@@ -1331,7 +1331,7 @@ function updateLive(){
   const done2 = Object.values(cnt).filter(c => c >= MIN_AV).length, one = Object.values(cnt).filter(c => c < MIN_AV).length;
   for (const d of Object.values(merged)) if (d.itens && Object.values(d.itens).some(i => i.v)) n++;
   const live = $('#live'); live.textContent = '';
-  [[done2 + ' de ' + REVIEW.length, 'termos já com as 2 avaliações'], [one, one === 1 ? 'termo com 1 avaliação' : 'termos com 1 avaliação'], [n, n === 1 ? 'ponto focal participou' : 'pontos focais participaram'], [ok, 'concordâncias'], [adj + no, 'sugestões e discordâncias']]
+  [[done2 + ' de ' + REVIEW.length, 'termos já com as 2 avaliações'], [one, one === 1 ? 'termo com 1 avaliação' : 'termos com 1 avaliação'], [n, n === 1 ? 'pessoa participou' : 'pessoas participaram'], [ok, 'concordâncias'], [adj + no, 'sugestões e discordâncias']]
     .forEach(([b, s]) => { const d = el('div'); d.append(el('b', null, b), el('span', null, s)); live.append(d); });
   $('#live-note').textContent = terms.size ? 'Atualizado conforme as frentes registram suas avaliações.' : 'Ainda não há avaliações. Que tal começar? Sorteie um termo em Revisar termos.';
 }
@@ -1491,7 +1491,7 @@ function gSpot(id){
   const bar = el('div', 'g-bar'); bar.style.height = '14px'; ['ok', 'adj', 'no'].forEach(c => { const s = el('span', c); bar.append(s); requestAnimationFrame(() => requestAnimationFrame(() => s.style.width = (p.n ? p[c] / p.n * 100 : 0) + '%')); }); sp.append(bar);
   const q = (n, a, b) => n + ' ' + (n === 1 ? a : b); sp.append(el('div', 'g-desc', q(p.ok, 'concorda', 'concordam') + ' · ' + q(p.adj, 'sugere ajuste', 'sugerem ajuste') + ' · ' + q(p.no, 'não concorda', 'não concordam')));
   sp.append(el('div', 'sp-q', p.adj + p.no ? 'Para o grupo: o que as sugestões têm em comum? Dá para chegar a um texto que atenda a todos?' : 'Para o grupo: o consenso aqui confirma a proposta ou alguém vê um caso que ela não cobre?'));
-  if (p.c.length) { const c = el('div', 'sp-c'); p.c.slice(0, 6).forEach(x => { const d = el('div', x.v); const n = el('b'); n.dataset.uid = x.uid; n.textContent = 'Ponto focal'; d.append(n, document.createTextNode(x.txt)); c.append(d); }); sp.append(c); paintNames(); }
+  if (p.c.length) { const c = el('div', 'sp-c'); p.c.slice(0, 6).forEach(x => { const d = el('div', x.v); const n = el('b'); n.dataset.uid = x.uid; n.textContent = 'Pessoa'; d.append(n, document.createTextNode(x.txt)); c.append(d); }); sp.append(c); paintNames(); }
   const act = el('div', 'sp-act');
   const o = el('button', 'btn', 'Abrir o termo'); o.type = 'button'; o.addEventListener('click', () => goTerm(id));
   const r = el('button', 'btn ghost', 'Sortear outro'); r.type = 'button'; r.addEventListener('click', gDice);
@@ -1503,7 +1503,7 @@ function gDice(){
   const d = $('#g-dice'); d.classList.remove('spin'); void d.offsetWidth; d.classList.add('spin');
   const L = gStats(); let pool = gRank('rev', [...L]).concat(gRank('div', [...L]));
   if (!pool.length) pool = L;
-  if (!pool.length) { const s = $('#g-spot'); s.hidden = false; s.textContent = ''; s.append(el('div', 'g-desc', 'Ainda não há retornos para sortear. Assim que os pontos focais responderem, o sorteio prioriza os termos que pedem revisão ou estão divididos.')); return; }
+  if (!pool.length) { const s = $('#g-spot'); s.hidden = false; s.textContent = ''; s.append(el('div', 'g-desc', 'Ainda não há retornos para sortear. Assim que as primeiras avaliações chegarem, o sorteio prioriza os termos que pedem revisão ou estão divididos.')); return; }
   const ids = [...new Set(pool.map(p => p.id))].filter(i => i !== G.last); const pick = ids.length ? ids[Math.floor(Math.random() * ids.length)] : pool[0].id;
   G.last = pick; setTimeout(() => gSpot(pick), 250);
 }
@@ -1517,7 +1517,7 @@ function renderPainel(){
   const people = Object.entries(merged()).filter(([u, d]) => Object.values(d.itens || {}).some(i => i && i.v));
   const days = Math.ceil((Date.parse(DEADLINE + 'T23:59:59-03:00') - Date.now()) / 864e5);
   const st = $('#p-stats'); st.textContent = '';
-  [[done2 + '/' + REVIEW.length, 'termos com as 2 avaliações', true], [one, one === 1 ? 'termo com 1 avaliação' : 'termos com 1 avaliação'], [people.length, people.length === 1 ? 'ponto focal participou' : 'pontos focais participaram'],
+  [[done2 + '/' + REVIEW.length, 'termos com as 2 avaliações', true], [one, one === 1 ? 'termo com 1 avaliação' : 'termos com 1 avaliação'], [people.length, people.length === 1 ? 'pessoa participou' : 'pessoas participaram'],
    [sugg.length, sugg.length === 1 ? 'sugestão ou discordância para a consolidação' : 'sugestões e discordâncias para a consolidação'], [days > 0 ? days : 0, days > 0 ? (days === 1 ? 'dia até o fim da avaliação (1ª semana de dezembro)' : 'dias até o fim da avaliação (1ª semana de dezembro)') : 'avaliação encerrada']]
     .forEach(([b, s, hl]) => { const d = el('div','stat' + (hl ? ' hl' : '')); d.append(el('b', null, b), el('span', null, s)); st.append(d); });
   $('#p-bar').style.width = (done2 / REVIEW.length * 100) + '%';
@@ -1620,7 +1620,7 @@ $('#p-csv2').addEventListener('click', async () => {
 $('#p-csv').addEventListener('click', async () => {
   const items = allItems(); const ids = [...new Set(items.map(x => x.uid))];
   const ps = Object.fromEntries(ids.map(u => [u, {name: nameOf(u)}]));
-  const head = ['ID','Termo','Tipo de uso','Origem','Tipo de proposta','Ponto focal','Retorno','Comentário','Data','Resposta da sistematização','Texto da resposta'];
+  const head = ['ID','Termo','Tipo de uso','Origem','Tipo de proposta','Pessoa','Retorno','Comentário','Data','Resposta da sistematização','Texto da resposta'];
   const lines = [head.join(';')].concat(items.sort((a, b) => a.id.localeCompare(b.id)).map(x => { const t = byId[x.id]; const d = dec[dkey(x.id, x.uid)];
     return [x.id, t.tp || t.t, t.uso, t.ctx, t.tipo, (ps[x.uid] && ps[x.uid].name) || '', OPTS[x.v], x.v === 'ok' ? '' : (x.txt || ''), (x.at || '').slice(0, 10), d ? DEC[d.status][0] : '', d ? d.resposta || '' : ''].map(csvCell).join(';'); }));
   const url = URL.createObjectURL(new Blob(['\ufeff' + lines.join('\n')], {type: 'text/csv;charset=utf-8'}));
