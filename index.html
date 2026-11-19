@@ -221,7 +221,7 @@ table.grid tr:last-child td{border-bottom:0}
 .es-u .q{font-style:italic;color:var(--muted);font-size:13px}
 .es-u .go{all:unset;cursor:pointer;font-size:13px;text-decoration:underline;justify-self:start;margin-top:4px}
 .examples.one{grid-template-columns:1fr}
-#v-visao .stats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+#v-visao .stats,#p-stats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .es-u .n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
 .es-tag{display:inline-block;font-size:11.5px;border-radius:999px;padding:2px 8px;background:#FEF3C7;color:#78350F;justify-self:start}
 .es-bar{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
@@ -513,33 +513,33 @@ input[type=search],select,textarea{border-radius:10px}
 <main class="wrap">
 <!-- ============ VISÃO GERAL ============ -->
 <div id="v-visao" data-pane="visao">
-  <p class="eyebrow">Resultado da sistematização</p>
+  <p class="eyebrow">Onde chegamos até aqui</p>
   <h1>Um vocabulário comum para a Fundação Itaú</h1>
-  <p class="lead">A sistematização revisou, unificou e organizou os termos usados pelo Itaú Social, Itaú Cultural, Itaú Educação e Trabalho e Observatório. Este é o resultado. Agora as frentes avaliam cada termo, e a versão 1.0 é entregue em 18/12.</p>
+  <p class="lead">A sistematização reuniu, revisou e organizou os termos usados pelo Itaú Social, pelo Itaú Cultural, pelo Itaú Educação e Trabalho e pelo Observatório. O que está aqui é uma proposta, e ela fica mais forte com o olhar de quem usa esses termos no dia a dia. Até a primeira semana de dezembro, as frentes avaliam os termos com a gente; a versão 1.0 chega em 18/12.</p>
 
   <div class="stats">
     <div class="stat"><b id="s-total">–</b><span>termos no vocabulário</span></div>
     <div class="stat"><b id="s-usos">–</b><span>tipos de uso</span></div>
     <div class="stat"><b id="s-cats">–</b><span>categorias</span></div>
-    <div class="stat hl"><b id="s-rev">–</b><span>para avaliar</span></div>
+    <div class="stat hl"><b id="s-rev">–</b><span>abertos para avaliação</span></div>
     <div class="stat"><b id="s-val">–</b><span>já validados</span></div>
   </div>
 
   <section class="block">
     <h2>Como o vocabulário se organiza</h2>
     <div class="chain">
-      <div class="ch"><span class="ch-k">Tipo de uso</span><b>Onde o termo é usado?</b><span class="ch-ex">Monitoramento de projetos</span></div>
+      <div class="ch"><span class="ch-k">Tipo de uso</span><b>Onde o termo é usado?</b><span class="ch-ex">Produção de conhecimento</span></div>
       <span class="ch-arr" aria-hidden="true">→</span>
-      <div class="ch"><span class="ch-k">Categoria</span><b>O que o termo é?</b><span class="ch-ex">Indicador</span></div>
+      <div class="ch"><span class="ch-k">Categoria</span><b>O que o termo é?</b><span class="ch-ex">Coleta de dados</span></div>
       <span class="ch-arr" aria-hidden="true">→</span>
-      <div class="ch"><span class="ch-k">Termo</span><b>Como se chama?</b><span class="ch-ex">Taxa de conclusão</span></div>
+      <div class="ch"><span class="ch-k">Termo</span><b>Como se chama?</b><span class="ch-ex">Grupo Focal</span></div>
     </div>
     <div class="es-usos" id="ov-usos"></div>
   </section>
 
   <section class="block two">
     <div>
-      <h2>Princípios</h2>
+      <h2>Os princípios da proposta</h2>
       <ol class="crit" style="margin-top:14px">
         <li><span><b>Um conceito, um termo.</b> Se o sentido é o mesmo, fica um termo só, e os outros nomes viram remissivos.</span></li>
         <li><span><b>Mesmo nome, sentidos diferentes:</b> os dois ficam, com um qualificador entre parênteses.</span></li>
@@ -553,24 +553,24 @@ input[type=search],select,textarea{border-radius:10px}
       <div class="examples one">
         <div class="ex"><h3>Um conceito, um termo</h3><div class="ba"><div class="before">Estudantes, duas vezes nos Resultados Esperados</div><span class="arrow">→</span><div class="after">Estudantes, um termo só</div></div></div>
         <div class="ex"><h3>Mesmo nome, sentidos diferentes</h3><div class="ba"><div class="before">Atrasado</div><span class="arrow">→</span><div class="after">Atrasado (tarefa) e Atrasado (projeto)</div></div></div>
-        <div class="ex"><h3>O nome diz o que é</h3><div class="ba"><div class="before">Alunos/as e crianças beneficiados/as</div><span class="arrow">→</span><div class="after">Número de alunos/as e crianças beneficiados/as</div></div></div>
+        <div class="ex"><h3>O termo nomeia o que se acompanha</h3><div class="ba"><div class="before">Formações oferecidas (nome do indicador)</div><span class="arrow">→</span><div class="after">Formação, com o nome antigo como remissivo</div></div></div>
       </div>
     </div>
   </section>
 
   <section class="block two">
     <div class="panel">
-      <h3>Retorno dos pontos focais</h3>
+      <h3>Como está a avaliação</h3>
       <p class="note" id="live-note">Carregando os retornos…</p>
       <div class="live" id="live"></div>
       <p style="margin-top:12px"><a href="#painel" class="link">Ver o acompanhamento →</a></p>
     </div>
     <div class="panel">
-      <h3>Próximas etapas</h3>
+      <h3>O caminho até a versão 1.0</h3>
       <div class="timeline" style="margin-top:14px">
-        <div class="tl done"><div>Sistematização</div></div>
-        <div class="tl"><div>Avaliação pelas frentes, nesta página</div></div>
-        <div class="tl"><div>Análise das sugestões e consolidação dos resultados</div></div>
+        <div class="tl done"><div>Sistematização · concluída</div></div>
+        <div class="tl"><div>Avaliação pelas frentes, nesta página · até a 1ª semana de dezembro</div></div>
+        <div class="tl"><div>Análise das sugestões e consolidação dos resultados · 2ª semana de dezembro</div></div>
         <div class="tl end"><div><b>Entrega da versão 1.0 · 18/12</b></div></div>
       </div>
     </div>
@@ -579,9 +579,9 @@ input[type=search],select,textarea{border-radius:10px}
 
 <!-- ============ REVISAR TERMOS ============ -->
 <div id="v-termos" data-pane="termos" hidden>
-  <p class="eyebrow">Para os pontos focais</p>
+  <p class="eyebrow">Para as frentes</p>
   <h1>Vamos olhar os termos juntos</h1>
-  <p class="lead">Sorteie um termo por vez e conte se faz sentido, se algo pode melhorar ou se você vê de outro jeito. Cada termo precisa de 2 avaliações; quando chega a 2, sai do sorteio. Para procurar um termo específico (inclusive os que já saíram do sorteio), use <b>Ver lista e buscar</b>.</p>
+  <p class="lead">Sorteie um termo, leia com calma e conte o que você acha: se faz sentido como está, se dá para melhorar ou se você enxerga de outro jeito. Cada termo precisa de duas avaliações; quando chega a duas, ele sai do sorteio e abre espaço para os outros. Quer falar de um termo específico, mesmo um que já saiu do sorteio? Use <b>Ver lista e buscar</b>.</p>
 
   <div id="perm-banner"></div>
   <div id="whoami"></div>
@@ -592,7 +592,7 @@ input[type=search],select,textarea{border-radius:10px}
   <section id="draw-mode">
     <div class="draw-head">
       <div>
-        <p class="draw-t">Avalie um termo por vez</p>
+        <p class="draw-t">Um termo de cada vez</p>
         <p class="note" id="draw-note"></p>
       </div>
       <label for="d-uso">Tipo de uso<select id="d-uso"><option value="">Todos</option></select></label>
@@ -626,16 +626,16 @@ input[type=search],select,textarea{border-radius:10px}
 <!-- ============ COMO FUNCIONA ============ -->
 <div id="v-guia" data-pane="guia" hidden>
   <p class="eyebrow">Para todos · comece por aqui</p>
-  <h1>Como vamos validar o vocabulário controlado juntos</h1>
-  <p class="lead">O vocabulário controlado ajuda a mesma coisa a ter o mesmo nome no Itaú Social, no Itaú Cultural, no Itaú Educação e Trabalho e no Observatório: em cadastros, sistemas, indicadores e relatórios. A sistematização organizou os termos, e agora convidamos as frentes, por meio dos pontos focais, a avaliá-los até a <b>primeira semana de dezembro</b>. A versão 1.0 será entregue em 18 de dezembro.</p>
+  <h1>Como vamos construir o vocabulário juntos</h1>
+  <p class="lead">Um vocabulário controlado faz a mesma coisa ter o mesmo nome em todo lugar: nos cadastros, nos sistemas, nos indicadores e nos relatórios do Itaú Social, do Itaú Cultural, do Itaú Educação e Trabalho e do Observatório. A sistematização fez uma primeira proposta, e agora convidamos as frentes, por meio dos pontos focais, a olhar para ela com a gente até a <b>primeira semana de dezembro</b>. Juntos, chegamos à versão 1.0 em 18 de dezembro.</p>
 
   <section class="block">
     <h2>As etapas</h2>
     <div class="process">
-      <div class="step done"><span class="when">Outubro a novembro · semana 2 · concluída</span><h3>Sistematização</h3><p>A sistematização revisou definições e remissivos, unificou termos repetidos, incluiu termos novos e organizou tipos de uso e categorias.</p></div>
-      <div class="step now"><span class="when">Novembro a dezembro · semana 1 · agora</span><h3>Avaliação pelas frentes</h3><p>As frentes, por meio dos pontos focais, leem os termos e registram, ao lado de cada um, se concordam ou o que mudariam.</p></div>
-      <div class="step"><span class="when">Dezembro · semana 2</span><h3>Análise das sugestões e consolidação dos resultados</h3><p>A sistematização analisa as sugestões, decide os ajustes e monta a versão final na planilha.</p></div>
-      <div class="step end"><span class="when">18/12</span><h3>Entrega da versão 1.0</h3><p>O vocabulário passa a ser a referência comum para sistemas e relatórios.</p></div>
+      <div class="step done"><span class="when">Outubro a novembro · semana 2 · concluída</span><h3>Sistematização</h3><p>Reunimos os termos das frentes, revisamos definições e remissivos, juntamos o que se repetia e organizamos tipos de uso e categorias.</p></div>
+      <div class="step now"><span class="when">Novembro a dezembro · semana 1 · agora</span><h3>Avaliação pelas frentes</h3><p>Os pontos focais das frentes olham os termos e contam se concordam ou o que mudariam. Cada termo recebe pelo menos duas avaliações.</p></div>
+      <div class="step"><span class="when">Dezembro · semana 2</span><h3>Análise das sugestões e consolidação dos resultados</h3><p>A sistematização lê cada sugestão e cada discordância, incorpora os ajustes e consolida a versão final.</p></div>
+      <div class="step end"><span class="when">18/12</span><h3>Entrega da versão 1.0</h3><p>O vocabulário passa a ser a referência comum da Fundação para sistemas, formulários e relatórios.</p></div>
     </div>
   </section>
 
@@ -643,21 +643,22 @@ input[type=search],select,textarea{border-radius:10px}
     <div>
       <h2>Quem faz o quê</h2>
       <div class="roles">
-        <div><h3>Pontos focais</h3><p>Avaliam os termos na aba <a href="#termos">Revisar termos</a>, começando pela priorização de tipos de uso definida para esta rodada. A validação não é dividida por frente: qualquer ponto focal pode avaliar qualquer termo.</p></div>
-        <div><h3>Sistematização</h3><p>Analisa as sugestões registradas, consolida a planilha e escreve o guia de uso.</p></div>
-        <div><h3>Lideranças</h3><p>Acompanham o andamento na <a href="#visao">Visão geral</a> e recebem a versão 1.0 em 18/12.</p></div>
+        <div><h3>Frentes, por meio dos pontos focais</h3><p>Avaliam os termos em <a href="#termos">Revisar termos</a>, de preferência pelo sorteio. Não há divisão por frente: qualquer ponto focal pode avaliar qualquer termo, e o olhar de outras áreas também enriquece a proposta.</p></div>
+        <div><h3>Sistematização</h3><p>Acompanha as avaliações, analisa as sugestões, consolida a planilha e prepara o guia de uso.</p></div>
+        <div><h3>Lideranças</h3><p>Acompanham o andamento na <a href="#visao">Visão geral</a> e no <a href="#painel">Acompanhamento</a>, e recebem a versão 1.0 em 18/12.</p></div>
       </div>
     </div>
     <div>
       <h2>Combinados para esta rodada</h2>
       <ul class="rules">
-        <li>Os termos já validados não entram nesta rodada e ficam disponíveis para consulta.</li>
-        <li>O jeito principal de avaliar é o <b>sorteio</b>: o site mostra um termo por vez, sempre um que você ainda não avaliou. Cada termo precisa de <b>2 avaliações</b>; quando chega a 2, sai do sorteio para todos.</li>
-        <li>Quer opinar sobre um termo que já saiu do sorteio? Use <b>Ver lista e buscar</b>: todos os termos continuam abertos para contribuição.</li>
-        <li>Na dúvida, vale mais um <b>Sugiro ajuste</b> com um comentário curto do que deixar sem resposta.</li>
-        <li>Termos sem retorno até a primeira semana de dezembro seguem com a proposta da sistematização.</li>
-        <li>Você pode mudar seu retorno enquanto a avaliação estiver aberta.</li>
-        <li>Quando houver visões diferentes sobre o mesmo termo, a sistematização analisa as sugestões e decide na consolidação.</li>
+        <li>Os termos já validados ficam para consulta e não entram nesta rodada.</li>
+        <li>O caminho principal é o <b>sorteio</b>: um termo por vez, sempre um que você ainda não avaliou.</li>
+        <li>Cada termo precisa de <b>2 avaliações</b>. Ao chegar a 2, ele sai do sorteio para todos.</li>
+        <li>Quer contribuir com um termo que já saiu do sorteio? Ele continua aberto em <b>Ver lista e buscar</b>.</li>
+        <li>Na dúvida, um <b>Sugiro ajuste</b> com um comentário curto ajuda mais do que deixar em branco.</li>
+        <li>Você pode mudar sua avaliação enquanto a rodada estiver aberta.</li>
+        <li>Termos sem avaliação até a primeira semana de dezembro seguem com a proposta da sistematização.</li>
+        <li>Quando houver visões diferentes sobre um termo, a sistematização considera todas na consolidação.</li>
       </ul>
     </div>
   </section>
@@ -669,35 +670,35 @@ input[type=search],select,textarea{border-radius:10px}
       <div class="gl"><span class="abbr">NT</span><h3>Termo preferido</h3><p>O nome oficial, que deve ser usado em sistemas, formulários e relatórios.</p><p class="eg">Ex.: Gestores Públicos</p></div>
       <div class="gl"><span class="abbr">UF</span><h3>Remissivo</h3><p>Outra forma de dizer a mesma coisa. Quem buscar por ela é levado ao termo preferido. Precisa ser um sinônimo real.</p><p class="eg">Ex.: Administradores públicos → Gestores Públicos</p></div>
       <div class="gl"><span class="abbr">RT</span><h3>Termo relacionado</h3><p>Outro termo com sentido próximo, mas diferente. Fica ligado para ajudar quem navega.</p><p class="eg">Ex.: Gestores Públicos ↔ Técnicos de Secretaria</p></div>
-      <div class="gl"><span class="abbr">BT</span><h3>Categoria</h3><p>O grupo maior ao qual o termo pertence.</p><p class="eg">Ex.: Gestores Públicos está em Público Alvo</p></div>
+      <div class="gl"><span class="abbr">BT</span><h3>Categoria e termo mais amplo</h3><p>O grupo ao qual o termo pertence. No card, a categoria aparece na linha do topo, e o termo mais amplo, em "Faz parte de".</p><p class="eg">Ex.: Gestores Públicos está em Público Alvo</p></div>
     </div>
   </section>
   <section class="block">
     <h2>O que cada termo traz</h2>
     <div class="typeslist">
-      <div><b>Termo</b><span>O nome oficial.</span></div>
+      <div><b>Tipo de uso › Categoria › Termo</b><span>A linha no topo do card: onde o termo é usado, o que ele é e como se chama.</span></div>
       <div><b>Definição</b><span>O que o termo quer dizer na Fundação.</span></div>
       <div><b>Remissivos</b><span>Outros nomes com o mesmo sentido. Quem busca por eles chega ao termo.</span></div>
-      <div><b>Termos relacionados</b><span>Termos ligados a este, que valem a pena consultar juntos.</span></div>
-      <div><b>Categoria e tipo de uso</b><span>O que o termo é e onde ele é usado.</span></div>
+      <div><b>Termos relacionados, Faz parte de e Inclui</b><span>Os termos ligados a este, que valem a pena consultar juntos.</span></div>
+      <div><b>Antes da revisão e Como fica</b><span>O que mudou em relação à planilha original, lado a lado.</span></div>
     </div>
   </section>
   <section class="block">
     <h2>Como dar seu retorno</h2>
     <ol class="steps">
       <li>Em <a href="#termos">Revisar termos</a>, clique em <b>Sortear um termo</b>. Se preferir, escolha antes o tipo de uso com que você mais trabalha.</li>
-      <li>Leia o termo: nome, definição, remissivos e termos relacionados.</li>
-      <li>Escolha <b>Concordo</b>, <b>Sugiro ajuste</b> ou <b>Não concordo</b>. Nos dois últimos, escreva o que mudaria.</li>
-      <li>Na primeira vez, informe seu nome e e-mail institucional. Seu retorno é salvo na hora.</li>
+      <li>Leia com calma: a linha do topo (tipo de uso, categoria e termo), a definição, os remissivos e as relações.</li>
+      <li>Conte o que você acha: <b>Concordo</b>, <b>Sugiro ajuste</b> ou <b>Não concordo</b>. Nos dois últimos, escreva o que mudaria; uma frase já ajuda.</li>
+      <li>Na primeira vez, informe seu nome e e-mail institucional. Seu retorno é salvo na hora; depois, é só sortear o próximo.</li>
     </ol>
   </section>
 </div>
 
 <!-- ============ ACOMPANHAMENTO ============ -->
 <div id="v-painel" data-pane="painel" hidden>
-  <p class="eyebrow">Para a sistematização e a liderança</p>
+  <p class="eyebrow">Para todos acompanharem</p>
   <h1>Acompanhamento da validação</h1>
-  <p class="lead" id="p-lead">Andamento por tipo de uso, os destaques para o debate, quem já participou e as sugestões que pedem resposta.</p>
+  <p class="lead" id="p-lead">Como a avaliação está andando: quantos termos já têm as duas avaliações, quem está participando e as sugestões que vão alimentar a consolidação.</p>
 
   <div class="stats" id="p-stats"></div>
   <div class="progress" aria-hidden="true"><div id="p-bar"></div></div>
@@ -705,8 +706,8 @@ input[type=search],select,textarea{border-radius:10px}
 
   <section class="block game">
     <div class="g-head">
-      <div><h2>Destaques para o debate</h2>
-      <p class="note" style="max-width:none">Os termos que mais movimentaram a avaliação. Troque o recorte e filtre por tipo de uso.</p></div>
+      <div><h2>Destaques da avaliação</h2>
+      <p class="note" style="max-width:none">Os termos que mais movimentaram a conversa até agora. Troque o recorte e filtre por tipo de uso.</p></div>
       <button type="button" class="btn g-dice" id="g-dice"><span aria-hidden="true">🎲</span> Sortear um termo para avaliar</button>
     </div>
     <div class="g-pulse" id="g-pulse"></div>
@@ -722,7 +723,7 @@ input[type=search],select,textarea{border-radius:10px}
   <section class="block">
     <h2>Por tipo de uso</h2>
     <div class="tablewrap"><table class="grid" id="p-areas">
-      <thead><tr><th>Tipo de uso</th><th class="n">Termos</th><th class="n">Com retorno</th><th class="n">Concordo</th><th class="n">Ajuste</th><th class="n">Não concordo</th><th>Andamento</th></tr></thead>
+      <thead><tr><th>Tipo de uso</th><th class="n">Termos</th><th class="n">Com 2 avaliações</th><th class="n">Concordo</th><th class="n">Ajuste</th><th class="n">Não concordo</th><th>Andamento</th></tr></thead>
       <tbody></tbody>
     </table></div>
   </section>
@@ -745,8 +746,9 @@ input[type=search],select,textarea{border-radius:10px}
       <h2>Sugestões e discordâncias</h2>
       <div class="row">
         <label for="p-filter" class="sr">Filtrar</label>
-        <select id="p-filter" style="width:auto"><option value="open">Sem resposta</option><option value="done">Respondidas</option><option value="">Todas</option></select>
-        <button type="button" class="btn ghost" id="p-csv" hidden>Baixar retornos (CSV)</button>
+        <select id="p-filter" style="width:auto"><option value="">Todas</option><option value="adj">Sugestões de ajuste</option><option value="no">Discordâncias</option></select>
+        <button type="button" class="btn ghost" id="p-csv2" hidden>Baixar resumo por termo (CSV)</button>
+        <button type="button" class="btn ghost" id="p-csv" hidden>Baixar todos os retornos (CSV)</button>
       </div>
     </div>
     <p class="note" id="p-admin-note"></p>
@@ -986,7 +988,7 @@ async function idOf(email){
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.trim().toLowerCase()));
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
 }
-try { adminKey = localStorage.getItem('vc-chave') || ''; canAdmin = !!adminKey; } catch (e) {}
+try { adminKey = localStorage.getItem('vc-chave') || ''; } catch (e) {}
 async function api(body){
   const r = await fetch(API_URL, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify(body)});
   const j = await r.json(); if (!j.ok) throw new Error(j.erro || 'erro'); return j;
@@ -1099,7 +1101,7 @@ function feedback(t){
   const box = el('div','fb');
   const cur = mine[t.id] || {};
   const locked = !!cur.v && !editing.has(t.id) && (cur.v === 'ok' || !!(cur.txt || '').trim());
-  const acts = el('div','acts'); acts.append(el('span','q','Seu retorno:'));
+  const acts = el('div','acts'); acts.append(el('span','q','O que você acha?'));
   const ta = el('textarea'); ta.id = 'ta-' + t.id; ta.placeholder = 'O que você mudaria? Ex.: incluir o remissivo "…", trocar a definição por "…"'; ta.value = cur.v === 'ok' ? '' : (cur.txt || '');
   ta.setAttribute('aria-label', 'Comentário sobre ' + (t.tp || t.t));
   const row = el('div','row'); const save = el('button','btn','Salvar comentário'); save.type='button';
@@ -1147,7 +1149,7 @@ function feedback(t){
   const n = {ok: 0, adj: 0, no: 0}; everyone.forEach(x => { if (n[x.v] != null) n[x.v]++; });
   const total = n.ok + n.adj + n.no;
   const tally = el('div','tally');
-  if (!total) tally.append(el('span','t-empty','Ainda sem retornos neste termo.'));
+  if (!total) tally.append(el('span','t-empty','Ninguém avaliou este termo ainda.'));
   else {
     const bar = el('div','t-bar'); bar.setAttribute('aria-hidden','true');
     [['ok','t-ok'],['adj','t-adj'],['no','t-no']].forEach(([k, c]) => { if (n[k]) { const sg = el('span', c); sg.style.flexGrow = n[k]; bar.append(sg); } });
@@ -1244,8 +1246,8 @@ function drawStatus(redraw){
   const open = REVIEW.filter(t => avCount(t.id) < MIN_AV).length;
   const pool = drawPool().length;
   const done = REVIEW.filter(t => mine[t.id] && mine[t.id].v).length;
-  $('#draw-note').textContent = open + ' de ' + REVIEW.length + ' termos ainda precisam de avaliação (cada um precisa de ' + MIN_AV + '). ' +
-    (pool ? pool + (pool === 1 ? ' está disponível' : ' estão disponíveis') + ' para você' + (us.value ? ' em ' + us.value : '') + '.' : '') + (done ? ' Você já avaliou ' + done + '.' : '');
+  $('#draw-note').textContent = open + ' de ' + REVIEW.length + ' termos ainda esperam avaliação (cada um precisa de ' + MIN_AV + '). ' +
+    (pool ? pool + (pool === 1 ? ' está esperando' : ' estão esperando') + ' por você' + (us.value ? ' em ' + us.value : '') + '.' : '') + (done ? ' Você já avaliou ' + done + '. Obrigado!' : '');
   const cur = D_.cur;
   const m = cur && mine[cur];
   if (m && m.v && (m.v === 'ok' || (m.txt || '').trim())) { drawDone(); return; }
@@ -1323,18 +1325,20 @@ $('#d-uso').addEventListener('change', () => { D_.skip.clear(); drawStatus(false
 function updateLive(){
   const people = Object.entries(all).filter(([uid, d]) => d.itens && Object.keys(d.itens).length);
   const merged = {...all}; if (myId) merged[myId] = {area: myArea, itens: mine};
-  let ok = 0, adj = 0, no = 0; const terms = new Set(); let n = 0;
+  let ok = 0, adj = 0, no = 0; const terms = new Set(); let n = 0; const cnt = {};
   for (const d of Object.values(merged)) for (const [id, it] of Object.entries(d.itens || {})) {
-    if (!it.v) continue; terms.add(id); if (it.v==='ok') ok++; else if (it.v==='adj') adj++; else if (it.v==='no') no++; }
+    if (!it.v || !byId[id] || isVal(byId[id])) continue; terms.add(id); cnt[id] = (cnt[id] || 0) + 1; if (it.v==='ok') ok++; else if (it.v==='adj') adj++; else if (it.v==='no') no++; }
+  const done2 = Object.values(cnt).filter(c => c >= MIN_AV).length, one = Object.values(cnt).filter(c => c < MIN_AV).length;
   for (const d of Object.values(merged)) if (d.itens && Object.values(d.itens).some(i => i.v)) n++;
   const live = $('#live'); live.textContent = '';
-  [[terms.size + ' de ' + REVIEW.length, 'termos com retorno'], [n, n === 1 ? 'ponto focal participou' : 'pontos focais participaram'], [ok, 'concordâncias'], [adj, 'sugestões de ajuste'], [no, 'discordâncias']]
+  [[done2 + ' de ' + REVIEW.length, 'termos já com as 2 avaliações'], [one, one === 1 ? 'termo com 1 avaliação' : 'termos com 1 avaliação'], [n, n === 1 ? 'ponto focal participou' : 'pontos focais participaram'], [ok, 'concordâncias'], [adj + no, 'sugestões e discordâncias']]
     .forEach(([b, s]) => { const d = el('div'); d.append(el('b', null, b), el('span', null, s)); live.append(d); });
-  $('#live-note').textContent = terms.size ? 'Atualizado em tempo real conforme os pontos focais respondem.' : 'Ainda não há retornos. Eles aparecem aqui assim que os pontos focais começarem.';
+  $('#live-note').textContent = terms.size ? 'Atualizado conforme as frentes registram suas avaliações.' : 'Ainda não há avaliações. Que tal começar? Sorteie um termo em Revisar termos.';
 }
 
 /* ---------- acompanhamento ---------- */
 const DEADLINE = '2026-12-04';
+const RESPOSTAS = false; // a etapa de resposta às sugestões saiu do processo
 function merged(){ const m = {...all}; if (myId) m[myId] = {...(all[myId]||{}), area: myArea, itens: mine}; return m; }
 function allItems(){
   const out = [];
@@ -1454,7 +1458,7 @@ function renderHighlights(items){
   const pulse = $('#g-pulse'); pulse.textContent = '';
   const L = gStats(); const hot = [...L].sort((a, b) => b.n - a.n)[0];
   const rev = gRank('rev', [...L]).length, ok = gRank('ok', [...L]).length;
-  [[L.length, 'termos já debatidos'], [rev, rev === 1 ? 'pede revisão' : 'pedem revisão'], [ok, ok === 1 ? 'com consenso' : 'com consenso'], [hot ? (byId[hot.id].tp || byId[hot.id].t) : '—', 'é o mais avaliado']]
+  [[L.length, L.length === 1 ? 'termo já avaliado' : 'termos já avaliados'], [rev, rev === 1 ? 'pede revisão' : 'pedem revisão'], [ok, ok === 1 ? 'com consenso' : 'com consenso'], [hot ? (byId[hot.id].tp || byId[hot.id].t) : '—', 'é o mais avaliado']]
     .forEach(([b, s]) => { const d = el('span', 'pill'); d.append(el('b', null, b), document.createTextNode(s)); pulse.append(d); });
   drawRank(false);
 }
@@ -1463,7 +1467,7 @@ function drawRank(anim){
   const meta = GM.find(x => x[0] === G.m); $('#g-desc').textContent = meta[2];
   const list = gRank(G.m, gStats()).slice(0, 10);
   const ol = $('#g-rank'); ol.textContent = '';
-  if (!list.length) { ol.append(el('li', 'g-empty', G.items.length ? 'Nenhum termo neste recorte ainda.' : 'Os destaques aparecem assim que os pontos focais começarem a responder.')); return; }
+  if (!list.length) { ol.append(el('li', 'g-empty', G.items.length ? 'Nenhum termo neste recorte ainda.' : 'Os destaques aparecem assim que as primeiras avaliações chegarem.')); return; }
   const leg = el('li', 'g-legend'); [['#86EFAC', 'Concordo'], ['#FCD34D', 'Ajuste'], ['#FCA5A5', 'Não concordo']].forEach(([c, l]) => { const s = el('span'); const i = el('i'); i.style.background = c; s.append(i, document.createTextNode(l)); leg.append(s); }); ol.append(leg);
   const max = Math.max(...list.map(p => p.n));
   list.forEach((p, k) => {
@@ -1508,23 +1512,25 @@ function renderPainel(){
   const items = allItems();
   const withRet = new Set(items.map(x => x.id));
   const sugg = items.filter(x => x.v === 'adj' || x.v === 'no');
-  const answered = sugg.filter(x => dec[dkey(x.id, x.uid)]);
+  const per = {}; items.forEach(x => { if (REVIEW.some(t => t.id === x.id)) per[x.id] = (per[x.id] || 0) + 1; });
+  const done2 = Object.values(per).filter(c => c >= MIN_AV).length, one = Object.values(per).filter(c => c < MIN_AV).length;
   const people = Object.entries(merged()).filter(([u, d]) => Object.values(d.itens || {}).some(i => i && i.v));
   const days = Math.ceil((Date.parse(DEADLINE + 'T23:59:59-03:00') - Date.now()) / 864e5);
   const st = $('#p-stats'); st.textContent = '';
-  [[withRet.size + '/' + REVIEW.length, 'termos com retorno', true], [people.length, people.length === 1 ? 'ponto focal participou' : 'pontos focais participaram'],
-   [sugg.length - answered.length, 'sugestões sem resposta'], [days > 0 ? days : 0, days > 0 ? (days === 1 ? 'dia até o fim da avaliação (1ª semana de dezembro)' : 'dias até o fim da avaliação (1ª semana de dezembro)') : 'avaliação encerrada']]
+  [[done2 + '/' + REVIEW.length, 'termos com as 2 avaliações', true], [one, one === 1 ? 'termo com 1 avaliação' : 'termos com 1 avaliação'], [people.length, people.length === 1 ? 'ponto focal participou' : 'pontos focais participaram'],
+   [sugg.length, sugg.length === 1 ? 'sugestão ou discordância para a consolidação' : 'sugestões e discordâncias para a consolidação'], [days > 0 ? days : 0, days > 0 ? (days === 1 ? 'dia até o fim da avaliação (1ª semana de dezembro)' : 'dias até o fim da avaliação (1ª semana de dezembro)') : 'avaliação encerrada']]
     .forEach(([b, s, hl]) => { const d = el('div','stat' + (hl ? ' hl' : '')); d.append(el('b', null, b), el('span', null, s)); st.append(d); });
-  $('#p-bar').style.width = (withRet.size / REVIEW.length * 100) + '%';
+  $('#p-bar').style.width = (done2 / REVIEW.length * 100) + '%';
   renderHighlights(items);
-  $('#p-note').textContent = Math.round(withRet.size / REVIEW.length * 100) + '% dos termos em validação já têm pelo menos um retorno.';
+  $('#p-note').textContent = Math.round(done2 / REVIEW.length * 100) + '% dos termos já têm as 2 avaliações' + (one ? ', e outros ' + one + ' esperam a segunda.' : '.');
 
   const table = (sel, keys, keyOf, onPick, sortByProgress) => {
     const tb = $(sel + ' tbody'); tb.textContent = '';
     const rows = keys.map(c => {
       const ts = REVIEW.filter(t => keyOf(t) === c); const ids = new Set(ts.map(t => t.id));
       const its = items.filter(x => ids.has(x.id));
-      return {c, n: ts.length, w: new Set(its.map(x => x.id)).size, ok: its.filter(x => x.v==='ok').length, adj: its.filter(x => x.v==='adj').length, no: its.filter(x => x.v==='no').length};
+      const pc = {}; its.forEach(x => pc[x.id] = (pc[x.id] || 0) + 1);
+      return {c, n: ts.length, w: Object.values(pc).filter(v => v >= MIN_AV).length, ok: its.filter(x => x.v==='ok').length, adj: its.filter(x => x.v==='adj').length, no: its.filter(x => x.v==='no').length};
     });
     if (sortByProgress) rows.sort((a, b) => (a.w / a.n) - (b.w / b.n) || b.n - a.n);
     rows.forEach(a => { const tr = el('tr');
@@ -1548,16 +1554,17 @@ function renderPainel(){
     b.append(nm, el('div','sub', its.length + ' avaliados' + (last ? ' · último em ' + new Date(last).toLocaleDateString('pt-BR', {day:'2-digit', month:'2-digit'}) : '')));
     c.append(img, b); pp.append(c); });
 
-  $('#p-csv').hidden = false;
-  $('#p-admin-note').textContent = canAdmin ? 'Modo sistematização ativo: você pode responder cada sugestão. A resposta aparece para quem sugeriu, ao lado do termo.' : 'As respostas são registradas pela equipe de sistematização.';
+  $('#p-csv').hidden = !canAdmin;
+  $('#p-csv2').hidden = $('#p-csv').hidden;
+  $('#p-admin-note').textContent = 'São as contribuições que a sistematização vai analisar na consolidação. Cada uma ajuda a chegar a um termo melhor.';
   renderAdminBox();
   const filt = $('#p-filter').value;
   const list = $('#p-sugg');
   const ae = document.activeElement; if (ae && list.contains(ae) && (ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT')) { paintNames(); return; }
   list.textContent = '';
-  const shownS = sugg.filter(x => filt === 'open' ? !dec[dkey(x.id, x.uid)] : filt === 'done' ? !!dec[dkey(x.id, x.uid)] : true)
+  const shownS = sugg.filter(x => !filt || x.v === filt)
     .sort((a, b) => (a.v === 'no' ? 0 : 1) - (b.v === 'no' ? 0 : 1) || a.id.localeCompare(b.id));
-  if (!shownS.length) list.append(el('div','empty', filt === 'open' ? 'Nenhuma sugestão aguardando resposta.' : 'Nenhuma sugestão aqui ainda.'));
+  if (!shownS.length) list.append(el('div','empty', 'Nenhuma sugestão aqui ainda.'));
   shownS.forEach(x => {
     const t = byId[x.id]; const k = dkey(x.id, x.uid); const d = dec[k];
     const s = el('div','sugg st-' + x.v);
@@ -1567,7 +1574,7 @@ function renderPainel(){
     const who = el('div','who'); const img = el('img'); img.alt=''; img.dataset.uid = x.uid; const nm = el('span'); nm.dataset.uid = x.uid;
     who.append(img, nm); s.append(who);
     s.append(el('div','txt', x.txt || '(sem comentário)'));
-    if (canAdmin) {
+    if (RESPOSTAS && canAdmin) {
       const r = el('div','reply'); r.append(el('span','k','Responder'));
       const row = el('div','row'); const sel = el('select'); sel.style.width = 'auto'; sel.id = 'ds-' + k;
       sel.append(Object.assign(el('option', null, 'Escolha a resposta'), {value: ''}));
@@ -1582,13 +1589,34 @@ function renderPainel(){
         catch (e) { info.textContent = String(e.message) === 'chave' ? 'Chave da sistematização incorreta. Confira e ative de novo.' : 'Não foi possível salvar agora. Tente de novo.'; }
       });
       row.append(sel, bt, info); r.append(row, ta); s.append(r);
-    } else if (d) s.append(replyBox(d));
+    } else if (RESPOSTAS && d) s.append(replyBox(d));
     list.append(s);
   });
   paintNames();
 }
 $('#p-filter').addEventListener('change', renderPainel);
 function csvCell(v){ v = v == null ? '' : String(v); return /[";\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+async function namesFor(ids){ return Object.fromEntries(ids.map(u => [u, {name: nameOf(u)}])); }
+async function saveCsv(name, text){
+  const url = URL.createObjectURL(new Blob(['\ufeff' + text], {type: 'text/csv;charset=utf-8'}));
+  const a = document.createElement('a'); a.href = url; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+$('#p-csv2').addEventListener('click', async () => {
+  const items = allItems(); const ps = await namesFor([...new Set(items.map(x => x.uid))]);
+  const by = {}; items.forEach(x => (by[x.id] || (by[x.id] = [])).push(x));
+  const head = ['ID','Termo','Tipo de uso','Categoria','Status na planilha','Situação na avaliação','Avaliações','Concordo','Sugiro ajuste','Não concordo','Leitura','Comentários'];
+  const lines = [head.join(';')];
+  TERMS.slice().sort((a, b) => a.id.localeCompare(b.id)).forEach(t => {
+    const its = by[t.id] || []; const n = its.length;
+    const ok = its.filter(x => x.v === 'ok').length, adj = its.filter(x => x.v === 'adj').length, no = its.filter(x => x.v === 'no').length;
+    const val = t.tipo === 'Já validado';
+    const sit = val && !n ? 'Já validado (fora da rodada)' : !n ? 'Sem avaliação' : n < MIN_AV ? 'Falta 1 avaliação' : 'Concluído (' + n + ' avaliações)';
+    const lei = !n ? '' : ok === n ? 'Todos concordaram' : (adj + no) === n ? (no > adj ? 'Todos pediram mudança, com discordâncias' : 'Todos pediram ajuste') : 'Opiniões divididas';
+    const com = its.filter(x => x.v !== 'ok' && (x.txt || '').trim()).map(x => ((ps[x.uid] && ps[x.uid].name) || 'Sem nome') + ' (' + OPTS[x.v] + '): ' + x.txt.trim().replace(/\s+/g, ' ')).join(' | ');
+    lines.push([t.id, t.tp || t.t, t.uso, t.catp || t.cat, val ? 'Validado' : 'Em avaliação', sit, n, ok, adj, no, lei, com].map(csvCell).join(';'));
+  });
+  await saveCsv('resumo-por-termo-' + new Date().toISOString().slice(0, 10) + '.csv', lines.join('\n'));
+});
 $('#p-csv').addEventListener('click', async () => {
   const items = allItems(); const ids = [...new Set(items.map(x => x.uid))];
   const ps = Object.fromEntries(ids.map(u => [u, {name: nameOf(u)}]));
@@ -1636,7 +1664,7 @@ function renderWho(){
 function renderAdminBox(){
   const box = $('#p-admin'); if (!box) return; box.textContent = '';
   const d = el('details','admin'); d.open = false;
-  d.append(el('summary', null, canAdmin ? 'Modo sistematização ativo' : 'Sou da equipe de sistematização'));
+  d.append(el('summary', null, canAdmin ? 'Modo sistematização ativo: downloads liberados' : 'Sou da equipe de sistematização (liberar downloads)'));
   const r = el('div','row');
   if (canAdmin) {
     const off = el('button','btn ghost','Sair do modo sistematização'); off.type = 'button';
@@ -1645,8 +1673,14 @@ function renderAdminBox(){
   } else {
     const i = el('input'); i.type = 'password'; i.id = 'admin-key'; i.placeholder = 'Chave da sistematização'; i.style.maxWidth = '260px';
     const b = el('button','btn','Ativar'); b.type = 'button';
-    b.addEventListener('click', () => { adminKey = i.value.trim(); canAdmin = !!adminKey; try { localStorage.setItem('vc-chave', adminKey); } catch (e) {} renderPainel(); });
-    r.append(i, b);
+    const msg = el('span','saved');
+    b.addEventListener('click', async () => {
+      const k = i.value.trim(); if (!k) { i.focus(); return; }
+      msg.textContent = 'Conferindo…';
+      try { await api({acao: 'verificar', chave: k, termo: 'TRM-000'}); adminKey = k; canAdmin = true; try { localStorage.setItem('vc-chave', k); } catch (e) {} renderPainel(); }
+      catch (e) { msg.textContent = String(e.message) === 'chave' ? 'Chave incorreta.' : String(e.message) === 'acao' ? 'A planilha ainda não confere a chave: atualize o Apps Script (veja o LEIA-ME).' : 'Não foi possível conferir agora. Tente de novo.'; }
+    });
+    r.append(i, b, msg);
   }
   d.append(r); box.append(d);
 }
@@ -1674,6 +1708,7 @@ updateLive();
 
 (async () => {
   if (myEmail) myId = await idOf(myEmail);
+  if (adminKey) api({acao: 'verificar', chave: adminKey, termo: 'TRM-000'}).then(() => { canAdmin = true; renderPainel(); }).catch(() => { adminKey = ''; try { localStorage.removeItem('vc-chave'); } catch (e) {} });
   renderWho();
   if (!API_OK) { offlineBanner('Esta página ainda não está conectada à planilha de retornos. Configure a URL do Apps Script (API_URL) no arquivo index.html.'); $('#live-note').textContent = 'Retornos indisponíveis: planilha não configurada.'; return; }
   let firstOk = false;
